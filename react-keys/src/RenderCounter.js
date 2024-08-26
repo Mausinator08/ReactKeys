@@ -1,13 +1,14 @@
 import { Component } from "react";
 
+let count = 0;
+
 class RenderCounter extends Component {
 	props = {};
-	count = 0;
 
 	constructor(props) {
 		super(props);
 		this.props = props || {};
-		this.count = 0;
+		count = 0;
 	}
 
 	componentDidMount() {
@@ -19,11 +20,11 @@ class RenderCounter extends Component {
 	}
 
 	render() {
-		this.count++;
+		count++;
 		return (
 			<div>
 				<h2>{this.props?.loggedIn ? "Logged In" : "Logged Out"}</h2>
-				<label>Renders: {this.count}</label>
+				<label>Renders: {count}</label>
 			</div>
 		);
 	}
